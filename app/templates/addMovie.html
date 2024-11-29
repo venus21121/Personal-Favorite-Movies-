@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Movie</title>
+</head>
+<body>
+    <h1>Add a Movie</h1>
+
+    <!-- Form to search for a movie -->
+    <form method="POST">
+        <input type="text" name="movie_title" placeholder="Enter movie title" required>
+        <button type="submit">Search</button>
+    </form>
+
+    {% if error %}
+        <p style="color:red;">{{ error }}</p>
+    {% endif %}
+
+    <!-- Display search results if available -->
+    {% if movies %}
+        <h2>Search Results:</h2>
+        <ul>
+            {% for movie in movies %}
+                <li>
+                    <h3>{{ movie['title'] }} ({{ movie['release_date'][:4] }})</h3>
+                    <p>{{ movie['overview'] }}</p>
+                    <form method="POST" action="{{ url_for('main.select_movie') }}">
+                        <input type="hidden" name="movie_id" value="{{ movie['id'] }}">
+                        <button type="submit">Add this Movie</button>
+                    </form>
+                </li>
+            {% endfor %}
+        </ul>
+    {% endif %}
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div>
+    <div>
+        <h1 class="movie-title">{{ movie.title }}</h1>
+        <p class="movie-description"> Summary: {{ movie.description }}</p>
+
+    </div>
+<form method="POST" action="{{ url_for('main.edit_movie', id=movie.id) }}">
+
+        <div class="mb-3">
+            <label for="rating" class="form-label">Rating</label>
+            <input type="number" class="form-control" id="rating" name="rating" value="{{ movie.rating }}" step="0.1" required>
+        </div>
+        <div class="mb-3">
+            <label for="review" class="form-label">Review</label>
+            <textarea class="form-control" id="review" name="review" required>{{ movie.review }}</textarea>
+        </div>
+        <button type="submit" class="btn btn-primary">Save Changes</button>
+    </form>
+</div>
+
+
+</body>
+</html>

@@ -1,0 +1,129 @@
+/* Card Container */
+body {
+    background-color: #87CEEB; /* Light Blue */
+    background-color: #000000; /* Black */
+    color: #fff; /* White text */
+}
+
+.card {
+    color: inherit;
+    cursor: pointer;
+    height: 500px; /* Rectangular height for the card */
+    min-height: 500px;
+    perspective: 1000px;
+    margin: 1rem auto;
+    position: relative;
+}
+
+@media screen and (max-width: 800px) {
+    .card {
+        width: calc(50% - 3rem);
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .card {
+        width: 100%;
+    }
+}
+
+/* Inner Card Container for Flip Effect */
+.card-inner {
+    display: flex;
+    transition: transform 0.6s ease-in-out;
+    transform-style: preserve-3d;
+    height: 100%;  /* Make sure it takes full height */
+    width: 100%;
+    color: #000000; /* Black text */
+}
+
+/* Flip Effect on Hover */
+.card:hover .card-inner {
+    transform: rotateY(180deg);
+}
+
+/* Front and Back Faces */
+.front, .back {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 100%; /* Full height */
+    width: 100%;  /* Full width */
+    backface-visibility: hidden;
+    border-radius: 6px;
+}
+
+/* Front Face Styling (Image and Title) */
+.front {
+    background-color: #000; /* Ensure a consistent background */
+    font-size: 1.618rem;
+    font-weight: 600;
+    color: #fff;
+    overflow: hidden;
+    font-family: Poppins, sans-serif;
+}
+
+/* Back Face Styling (Movie Info) */
+.back {
+    background: #fff;
+    transform: rotateY(180deg); /* Initially hidden */
+    padding: 1rem;  /* Adjust padding as needed */
+    text-align: center;
+    overflow: auto;  /* Allow scrolling if content is too large */
+}
+
+/* Card Image (front) */
+.card-img-top {
+    max-height: 100%; /* Adjust the height to fill the card vertically */
+    object-fit: contain; /* Ensure the entire image is displayed without cropping */
+    width: 100%;  /* Ensure the image spans the full width of the card */
+    border-radius: 6px 6px 0 0; /* Optional: Rounded top corners */
+}
+
+/* Title, Text, and Button Styling */
+.card-title {
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+.card-text {
+    font-size: 1rem;
+    margin-bottom: 1rem;
+}
+
+.btn {
+    margin-top: 1rem;
+}
+
+/* Style for the carousel arrows to make them bold and white */
+/* Position the carousel control buttons on the sides of the carousel */
+.carousel-control-prev,
+.carousel-control-next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 1; /* Make sure the buttons are above the carousel */
+    width: 3%;  /* Control button width */
+    height: 100%; /* Full height of the carousel */
+}
+.add-movie-btn {
+    font-size: 10rem; /* Large + sign */
+    color: white; /* White text for the + sign */
+    text-align: center;
+    width: 100%; /* Make the button take the full width of the card */
+    height: 100%; /* Make the button take the full height of the card */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #000; /* Black background for the button */
+    border: none;
+}
+
+.add-movie-btn:hover {
+    background-color: #333; /* Darker black on hover */
+}
