@@ -1,7 +1,7 @@
 # API interaction and business logic
 from decouple import config
 import requests
-MOVIE_DB_API_KEY = config('API_KEY')
+MOVIE_DB_API_KEY = config('TMDB_API_KEY')
 MOVIE_DB_SEARCH_URL = "https://api.themoviedb.org/3/search/movie"
 MOVIE_DB_INFO_URL = "https://api.themoviedb.org/3/movie"
 MOVIE_DB_DISCOVER_MOVIE_URL = "https://api.themoviedb.org/3/discover/movie"
