@@ -23,7 +23,7 @@
                         <div class="card-inner">
                             <!-- Front Face -->
                             <div class="front">
-                                <p class="large">{{ movie.ranking }}</p>
+<!--                                <p class="large">{{ movie.ranking }}</p>-->
                                 <img src="{{ movie.img_url }}" class="card-img-top" alt="{{ movie.title }}">
                             </div>
 
@@ -32,8 +32,8 @@
                                 <div class="card-body">
                                     <h5 class="card-title">{{ movie.title }}</h5>
                                     <p class="card-text">{{ movie.description }}</p>
-                                    <p><strong>Your Rating: </strong>{{ movie.rating }}</p>
-                                    <p><strong>Your Review: </strong>{{ movie.review }}</p>
+                                    <p><strong>My Rating: </strong>{{ movie.rating }}</p>
+                                    <p><strong>My Review: </strong>{{ movie.review }}</p>
                                     <a href="{{ url_for('main.edit_movie', id=movie.id) }}" class="btn btn-primary">Edit</a>
                                     <a href="{{ url_for('main.delete_movie', id=movie.id) }}" class="btn btn-danger">Delete</a>
                                 </div>
@@ -45,9 +45,7 @@
             <!-- Add Movie Button (styled like a card) -->
             <div class="col-md-4">
                 <div class="card movie-card add-movie-card">
-                    <div class="card-body d-flex justify-content-center align-items-center">
                         <a href="{{ url_for('main.add_movie') }}" class="btn btn-success add-movie-btn">+</a>
-                    </div>
                 </div>
             </div>
 
@@ -103,9 +101,9 @@
         {% endif %}
 
         <!-- Add Movie Button -->
-        <div class="text-center mt-4">
-            <a href="{{ url_for('main.add_movie') }}" class="btn btn-success">Add Movie</a>
-        </div>
+<!--        <div class="text-center mt-4">-->
+<!--            <a href="{{ url_for('main.add_movie') }}" class="btn btn-success">Add Movie</a>-->
+<!--        </div>-->
     </div>
 
     <!-- Bootstrap JS & Popper.js (for carousel functionality) -->

@@ -1,9 +1,12 @@
 /* Card Container */
 body {
-    background-color: #87CEEB; /* Light Blue */
-    background-color: #000000; /* Black */
-    color: #fff; /* White text */
+    background-color: #141414; /* Netflix dark gray */
+    color: #ffffff; /* White text for contrast */
+    font-family: Arial, sans-serif; /* Ensure a clean font style */
+    margin: 0;
+    padding: 0;
 }
+
 
 .card {
     color: inherit;
@@ -35,6 +38,8 @@ body {
     height: 100%;  /* Make sure it takes full height */
     width: 100%;
     color: #000000; /* Black text */
+    border: none; /* Removes any borders */
+    outline: none; /* Removes any default outlines */
 }
 
 /* Flip Effect on Hover */
@@ -56,6 +61,9 @@ body {
     width: 100%;  /* Full width */
     backface-visibility: hidden;
     border-radius: 6px;
+    border: none; /* Removes any borders */
+    outline: none; /* Removes any default outlines */
+
 }
 
 /* Front Face Styling (Image and Title) */
@@ -67,6 +75,7 @@ body {
     overflow: hidden;
     font-family: Poppins, sans-serif;
 }
+
 
 /* Back Face Styling (Movie Info) */
 .back {
@@ -80,7 +89,7 @@ body {
 /* Card Image (front) */
 .card-img-top {
     max-height: 100%; /* Adjust the height to fill the card vertically */
-    object-fit: contain; /* Ensure the entire image is displayed without cropping */
+    object-fit: cover; /* Ensure the entire image is displayed without cropping */
     width: 100%;  /* Ensure the image spans the full width of the card */
     border-radius: 6px 6px 0 0; /* Optional: Rounded top corners */
 }
@@ -96,9 +105,7 @@ body {
     margin-bottom: 1rem;
 }
 
-.btn {
-    margin-top: 1rem;
-}
+
 
 /* Style for the carousel arrows to make them bold and white */
 /* Position the carousel control buttons on the sides of the carousel */
@@ -112,7 +119,7 @@ body {
     height: 100%; /* Full height of the carousel */
 }
 .add-movie-btn {
-    font-size: 10rem; /* Large + sign */
+    font-size: 12rem; /* Large + sign */
     color: white; /* White text for the + sign */
     text-align: center;
     width: 100%; /* Make the button take the full width of the card */
